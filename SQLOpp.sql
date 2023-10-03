@@ -1,10 +1,10 @@
-Alle sjangere i tabellen Genre (28)
-- select * from genre;
+--Alle sjangere i tabellen Genre (28)
+select * from genre;
 
-Filmid og tittel for alle filmer utgitt i 1892 (12)
-- select filmid, title from film where prodyear = '1892' ;
+--Filmid og tittel for alle filmer utgitt i 1892 (12)
+select filmid, title from film where prodyear = '1892' ;
 
-Filmid og tittel for alle filmer der filmid er mellom 2000 og 2030 (14)
+--Filmid og tittel for alle filmer der filmid er mellom 2000 og 2030 (14)
 - select filmid, title from film where filmid between 2000 and 2030 ;
 
 Filmid og tittel på alle filmer med Star Wars i navnet (129)
@@ -28,10 +28,12 @@ Vis filmid for kinofilmer som har filmtittelen Love (kinofilmer har filmtype «C
 Hvor mange filmer i filmdatabasen er norske?
 
 
-Filmid og filmtype (fra Filmitem) for alle filmer som ble produsert i 1894 (82) 
+Filmid og filmtype (fra Filmitem) for alle filmer som ble produsert i 1894 (82)
+
 - select fi.filmid, fi.filmtype from filmitem as fi where fi.filmid in(select f.filmid from film as f where f.prodyear = '1894');
 
 Navn på alle kvinnelige skuespillere (cast) i filmen med filmid 357076 (11)
+
 - select p.firstname,p.lastname from person as p where p.gender='F' and p.personid in(select f.personid from filmparticipation as f where f.filmid = 357076 and f.parttype='cast');
 
 
